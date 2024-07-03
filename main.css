@@ -1,8 +1,14 @@
+body{
+    height: 100%;
+    transition: background-color 1.5s;
+}
+
 /*Estilos de Sidebar*/
 .sidebar {
     background-color: #b4a7d6;
     padding: 15px;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     width: 350px;
     display: block;
  }
@@ -16,8 +22,11 @@
 /* Estilos de Opciones*/
 
 .opciones{
-    background-color: #b4a7d6;
-    height: 75px;
+    background-color: #946cac;
+    height: 100vh;
+    width: 75px;
+    position: sticky;
+    top: 0;
 }
 
 .boton-base{
@@ -25,20 +34,27 @@
     margin: 10px;
     width: 50px;
     height: 50px;
-    background-color: #5004527a !important;
-    color: #efefef !important;
+    background-color: #5004527a;
+    color: #efefef;
 }
 
 .boton-base:hover{
-    background-color: #500452c9 !important;
+    background-color: #500452c9;
+    color: #efefef;
 }
 
-.boton-sidebar{
-    float: left;
-    display: none !important;
+.boton-modo{
+    background-color: #303030;
+    color: #efefef;
 }
 
 /* Estilos de Contenido*/
+#contenedor{
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+}
+
 #titulo-mobile{
     padding: 15px;
     height: 75px;
@@ -49,20 +65,18 @@
 .contenido {
     padding: 15px;
     width: 100%;
+    transition: color 1.5s;
+}
+
+.delimitador{
+    border-color: #500452c9;
+    transition: border-color 1.5s;
 }
 
 @media (max-width: 680px) {
     .sidebar{
         display: none;
         width: 100%;
-    }
-
-    .boton-sidebar{
-        display: inline !important;
-    }
-
-    .opciones{
-        height: 100vh;
     }
 
     #titulo-mobile{
