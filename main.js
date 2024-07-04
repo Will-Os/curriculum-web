@@ -38,18 +38,20 @@ $(document).ready(function(){
     //Modo Oscuro
     $(".boton-modo").on("click",function(){
         if(modoOscuro){
-            $("body").css("background-color","#efefef");
-            $(".contenido").css("color","#212529");
-            $(".delimitador").css("border-color","#500452c9");
+            $("html").css("--color-letra-contenido","#212529");
+            $("html").css("--color-fondo-contenido","#efefef");
+            $("html").css("--color-borde-contenido","#500452c9");
+            $("html").css("--color-fondo-sidebar","#b4a7d6");
             $(".boton-modo").css("background-color","#303030");
             $(".boton-modo").css("color","#efefef");
             $(".bi-brightness-high-fill").addClass("bi-moon-stars-fill");
             $(".bi-brightness-high-fill").removeClass("bi-brightness-high-fill");
             modoOscuro = false;
         }else{
-            $("body").css("background-color","#303030");
-            $(".contenido").css("color","#efefef");
-            $(".delimitador").css("border-color","#efefef");
+            $("html").css("--color-letra-contenido","#efefef");
+            $("html").css("--color-fondo-contenido","#303030");
+            $("html").css("--color-borde-contenido","#efefef");
+            $("html").css("--color-fondo-sidebar","#3e2f4896");
             $(".boton-modo").css("background-color","#efefef");
             $(".boton-modo").css("color","#303030");
             $(".bi-moon-stars-fill").addClass("bi-brightness-high-fill");

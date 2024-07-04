@@ -1,22 +1,38 @@
+/*Variables*/
+:root{
+    --color-letra-contenido: #212529;
+    --color-borde-contenido: #500452c9;
+    --color-fondo-contenido: #efefef;
+    --color-fondo-sidebar: #b4a7d6;
+}
+
 body{
+    background-color: var(--color-fondo-contenido);
     height: 100%;
     transition: background-color 1.5s;
 }
 
 /*Estilos de Sidebar*/
 .sidebar {
-    background-color: #b4a7d6;
+    background-color: var(--color-fondo-sidebar);
     padding: 15px;
     min-height: 100vh;
     height: 100%;
     width: 350px;
     display: block;
+    color: var(--color-letra-contenido);
+    transition: background-color 1.5s, color 1.5s;
  }
 
 .sidebar ul{
     list-style: none;
     padding: 0;
     margin: 5px;
+}
+
+.sidebar a{
+    color: var(--color-letra-contenido);
+    transition: color 1.5s;
 }
 
 /* Estilos de Opciones*/
@@ -58,18 +74,21 @@ body{
 #titulo-mobile{
     padding: 15px;
     height: 75px;
-    background-color: #b4a7d6;
+    background-color: var(--color-fondo-sidebar);
+    color: var(--color-letra-contenido);
     display: none;
+    transition: background-color 1.5s, color 1.5s;
 }
 
 .contenido {
     padding: 15px;
     width: 100%;
+    color: var(--color-letra-contenido);
     transition: color 1.5s;
 }
 
 .delimitador{
-    border-color: #500452c9;
+    border-color: var(--color-borde-contenido);
     transition: border-color 1.5s;
 }
 
