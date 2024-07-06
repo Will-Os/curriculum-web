@@ -1,8 +1,20 @@
 $(document).ready(function(){
     //Activacion de ToolTips
+    var metodoTooltip = navigator.userAgentData.mobile ? "click":"hover";
+
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl,{trigger: metodoTooltip}));
     var modoOscuro = false;
+
+    //Oculta todos los tooltips despues de dos segundos si es mobile
+    if(navigator.userAgentData.mobile){
+        tooltipTriggerList.forEach(elemento => {
+            elemento.addEventListener('shown.bs.tooltip', function() {
+                tooltip = bootstrap.Tooltip.getInstance(elemento);
+                setTimeout(() => {tooltip.hide();}, 1500);
+            });
+        });
+    }
 
     //Funcionalidad Boton sidebar
     var sidebar = $(".sidebar");
@@ -20,6 +32,7 @@ $(document).ready(function(){
         if ($(window).width() > 680) {
             contenido.show();
         } else{
+            contenido.show();
             sidebar.hide();
         }
     });
@@ -31,8 +44,14 @@ $(document).ready(function(){
         $temp.val($(".mail").text()).select();
         document.execCommand("copy");
         $temp.remove();
-        var nombreTooltip = $(".mail").attr("aria-describedby");
-        $("#"+nombreTooltip).find(".tooltip-inner").text("¡Correo Copiado!");
+
+        var tooltip = bootstrap.Tooltip.getInstance(this);
+        tooltip.setContent({ '.tooltip-inner': "¡Correo Copiado!" });
+
+        setTimeout(function(){
+            tooltip.hide();
+            tooltip.setContent({ '.tooltip-inner': "Copiar en el Portapapeles" });
+        },2000);
     });
 
     //Modo Oscuro
