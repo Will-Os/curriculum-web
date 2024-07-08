@@ -92,6 +92,73 @@ body{
     transition: border-color 1.5s;
 }
 
+
+/* Estilos de Timeline */
+.timeline {
+    list-style: none;
+    position: relative; 
+    width: 90%;
+    margin-left: auto;
+}
+
+.evento-timeline{
+    margin: auto;
+    background-color: var(--color-fondo-contenido);
+    color: var(--color-letra-contenido);
+    margin-bottom: 15px;
+    position: relative;
+    transition: background-color 1.5s, color 1.5s;
+}
+
+.evento-timeline::before{
+    content: '';
+    position: absolute;
+    left: -35px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; 
+    height: 30px; 
+    background-color: var(--color-fondo-contenido);
+    border-color: var(--color-borde-contenido);
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 50%;
+    transition: background-color 1.5s,border-color 1.5s;
+    z-index: 1000;
+}
+
+.evento-timeline::after{
+    content: attr(data-fecha-i) "\A" attr(data-fecha-f);
+    white-space: pre;
+    left: -115px; 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-overflow: clip;
+    color:  var(--color-letra-contenido);
+    text-align: right;
+    font-weight: bold;
+    transition: color 1.5s;
+}
+
+.linea-timeline {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: var(--color-borde-contenido);
+    transition: background-color 1.5s,border-color 1.5s;
+    z-index: 0;
+}
+
+.evento-timeline .card-header{
+    background-color: var(--color-fondo-sidebar);
+    transition: background-color 1.5s;
+}
+
+/* Valores Media */
 @media (max-width: 680px) {
     .sidebar{
         display: none;
@@ -100,5 +167,8 @@ body{
 
     #titulo-mobile{
         display: block;
+    }
+    .timeline{
+        width: 75%;
     }
 }
