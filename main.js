@@ -65,6 +65,7 @@ $(document).ready(function(){
             $(".boton-modo").css("color","#efefef");
             $(".bi-brightness-high-fill").addClass("bi-moon-stars-fill");
             $(".bi-brightness-high-fill").removeClass("bi-brightness-high-fill");
+            $(".img-tecnologia").css("filter","grayscale(0) contrast(100%)");
             modoOscuro = false;
         }else{
             $("html").css("--color-letra-contenido","#efefef");
@@ -75,6 +76,7 @@ $(document).ready(function(){
             $(".boton-modo").css("color","#303030");
             $(".bi-moon-stars-fill").addClass("bi-brightness-high-fill");
             $(".bi-moon-stars-fill").removeClass("bi-moon-stars-fill");
+            $(".img-tecnologia").css("filter","grayscale(100%) contrast(30%)");
             modoOscuro = true;
         }
     })

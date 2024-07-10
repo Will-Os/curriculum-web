@@ -112,6 +112,7 @@ body{
     width: 150px;
     height: 150px;
     margin-top: 10px;
+    transition: filter 1.5s;
 }
 
 /* Estilos de Timeline */
