@@ -92,6 +92,27 @@ body{
     transition: border-color 1.5s;
 }
 
+/* Estilos de Perfil Profesional*/
+.competencia-tecnica ul{
+    list-style: none;
+}
+
+.competencia-tecnica p{
+    text-align: justify;
+}
+
+.competencia-tecnica.centro{
+    border-width: 0 3px 0 3px;
+    border-color: var(--color-borde-contenido);
+    border-style: solid;
+    transition: border-color 1.5s;
+}
+
+.img-tecnologia{
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+}
 
 /* Estilos de Timeline */
 .timeline {
@@ -170,5 +191,14 @@ body{
     }
     .timeline{
         width: 75%;
+    }
+    .competencia-tecnica.centro{
+        border-width: 3px 0 3px 0;
+        border-color: var(--color-borde-contenido);
+        border-style: solid;
+    }
+    .img-tecnologia{
+        width: 75px;
+        height: 75px;
     }
 }
